@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Slurpy - Image Extractor",
+  "description": "Rule-Based Image Download within a Web Tree",
+  "version": "1.0",
+  "minimum_chrome_version": "55",
+  "browser_action": {
+    "default_icon": "assets/black_icon-128x128.png",
+    "default_title": "Slurpy Up Images"
+  },
+  "background": {
+    "scripts": ["src/background/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["src/content/content.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
